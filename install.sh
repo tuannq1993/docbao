@@ -38,10 +38,10 @@ sleep 1
 cd $install_dir
 python3 -m venv docbao_env
 source $install_dir/docbao_env/bin/activate
-pip3 install opencv-python
+
 pip3 install --upgrade setuptools pip
 $install_dir/docbao_env/bin/python3 -m pip install scikit-build
-
+pip3 install opencv-python
 $install_dir/docbao_env/bin/python3 -m pip install -r requirements.txt
 sleep 1
 echo "Step 3: install firefox and xvfb"
