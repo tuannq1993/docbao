@@ -27,6 +27,9 @@ sudo apt-get install python3-venv
 sudo apt install curl
 sudo apt install php7.2-cli
 sudo apt install php7.2-mbstring
+
+sudo apt-get install -y python3-psutil
+sudo pip3 install --upgrade pip
 sleep 1
 echo "Step 2: activate docbao virtual environment & install libraries"
 echo "__________________________________________________________________________"
@@ -34,6 +37,11 @@ sleep 1
 cd $install_dir
 python3 -m venv docbao_env
 source $install_dir/docbao_env/bin/activate
+
+$install_dir/docbao_env/bin/python3 -m pip install scikit-build
+$install_dir/docbao_env/bin/python3 -m pip install opencv-python
+$install_dir/docbao_env/bin/python3 -m pip install --upgrade setuptools pip
+
 $install_dir/docbao_env/bin/python3 -m pip install -r requirements.txt
 sleep 1
 echo "Step 3: install firefox and xvfb"
