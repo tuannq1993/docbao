@@ -19,11 +19,11 @@ POSTGRES_PASSWORD = os.environ['DOCBAO_POSTGRES_PASSWORD']
 POSTGRES_DB       = os.environ['DOCBAO_POSTGRES_DATABASE']
 POSTGRES_HOST     = os.environ['DOCBAO_POSTGRES_HOST']
 POSTGRES_PORT     = os.environ['DOCBAO_POSTGRES_PORT']
-
+POSTGRES_TABLE     = os.environ['DOCBAO_POSTGRES_TABLE']
 sqlalchemy_base = declarative_base()
 
 class Postgres_Article(sqlalchemy_base):
-    __tablename__ = POSTGRES_DB
+    __tablename__ = POSTGRES_TABLE
     article_id = Column(String, primary_key=True)
     topic = Column(String)
     href = Column(String)
